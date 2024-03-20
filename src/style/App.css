@@ -1,0 +1,47 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.todoList {
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 20px 80px 60px;
+  box-shadow: 5px 5px #888888;
+}
+
+label {
+  color: #358aeb;
+  font-size: 1.4rem;
+}
+
+input {
+  font-size: 1.4rem;
+  background-color: transparent;
+  border: 1px solid gray;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 0 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color:#358aeb ;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    color: #0660c7;
+  }
+}
+
+.yourInput {
+  margin: 0 !important;
+  padding: 0 !important;
+}
