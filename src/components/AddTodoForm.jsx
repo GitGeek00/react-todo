@@ -6,7 +6,7 @@ function AddTodoForm(props) {
     const todoTitle = event.target.title.value;
     console.log(todoTitle);
     event.target.title.value.reset;
-    props.onAddTodo(todoTitle);
+    props.onAddTodo(`Your input is ${todoTitle}`);
   }
   return (
     <>
