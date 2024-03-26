@@ -5,15 +5,23 @@ import AddTodoForm from "./components/AddTodoForm";
 
 function App() {
 
-  const [newTodo , setNewTodo] = React.useState('Your input goes here');
+  const [todoList, setTodoList] = React.useState([]);
 
+  const addTodo = (newTodo) => {
+    setTodoList([newTodo, ...todoList]);
+  }
+  
   return (
-    <div className="todoList">
-      <h1>Todo List</h1>
-      <AddTodoForm onAddTodo={setNewTodo} />
-      <p className='yourInput'>{newTodo}</p>
-      <TodoList />
-    </div>
+    <>
+      <h1 className="welcome fade-out">
+        Welcome to My Todo List REACT Application
+      </h1>
+      <div className="todoList">
+        <h1>My Todo List</h1>
+        <AddTodoForm onAddTodo={addTodo} />
+        <TodoList todoList={todoList} />
+      </div>
+    </>
   );
 }
 
