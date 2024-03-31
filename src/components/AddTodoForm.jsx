@@ -17,7 +17,8 @@ function AddTodoForm({ onAddTodo }) {
     
     event.target.title.focus();
     setTodoTitle("");
-  };
+  }
+
   return (
     <>
       <form onSubmit={handleAddTodo}>
