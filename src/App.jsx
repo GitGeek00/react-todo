@@ -1,16 +1,29 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./style/App.css";
 import TodoList from "./components/TodoList";
 import AddTodoForm from "./components/AddTodoForm";
 
-function App() {
+const useSemiPersistentState = () => {
+  const [todoList, setTodoList] = useState(
+    localStorage.getItem("savedTodoList")
+      ? JSON.parse(localStorage.getItem("savedTodoList"))
+      : []
+  );
 
-  const [todoList, setTodoList] = React.useState([]);
+  useEffect(() => {
+    localStorage.setItem("savedTodoList", JSON.stringify(todoList));
+  }, [todoList]);
+
+  return [todoList, setTodoList];
+};
+
+function App() {
+  const [todoList, setTodoList] = useSemiPersistentState();
 
   const addTodo = (newTodo) => {
     setTodoList([newTodo, ...todoList]);
-  }
-  
+  };
+
   return (
     <>
       <h1 className="welcome fade-out">
