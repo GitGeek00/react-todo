@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InputWithLabel from "./InputWithLabel";
 
 function AddTodoForm({ onAddTodo }) {
   const [todoTitle, setTodoTitle] = useState("");
@@ -10,12 +11,11 @@ function AddTodoForm({ onAddTodo }) {
 
   const handleAddTodo = (event) => {
     event.preventDefault();
-  
+
     if (todoTitle) {
       onAddTodo({ id: Date.now(), title: todoTitle });
     }
-    
-    event.target.title.focus();
+
     setTodoTitle("");
   }
 
@@ -23,17 +23,9 @@ function AddTodoForm({ onAddTodo }) {
     <>
       <form onSubmit={handleAddTodo}>
         <span className="todoBrdr">
-          <label htmlFor="todoTitle">Title: </label>
-          <input
-            type="text"
-            id="todoTitle"
-            name="title"
-            className="yourInput"
-            onChange={handleTitleChange}
-            value={todoTitle}
-          />
+          <InputWithLabel handleTitleChange={handleTitleChange} todoTitle={todoTitle}>Title: </InputWithLabel>
         </span>
-        <button type="submit">Add</button>
+        <button className="button1" type="submit">Add</button>
       </form>
     </>
   );

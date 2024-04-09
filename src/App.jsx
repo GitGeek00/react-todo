@@ -24,6 +24,10 @@ function App() {
     setTodoList([newTodo, ...todoList]);
   };
 
+  const removeTodo = (id) => {
+    setTodoList(todoList.filter((item) => item.id != id));
+  }
+
   return (
     <>
       <h1 className="welcome fade-out">
@@ -32,7 +36,7 @@ function App() {
       <div className="todoList">
         <h1>My Todo List</h1>
         <AddTodoForm onAddTodo={addTodo} />
-        <TodoList todoList={todoList} />
+        <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
       </div>
     </>
   );
