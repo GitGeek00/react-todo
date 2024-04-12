@@ -1,21 +1,21 @@
 import { useState } from "react";
+import InputWithLabel from "./InputWithLabel";
 
 function AddTodoForm({ onAddTodo }) {
-  const [todoTitle, setTodoTitle] = useState("");
+  const [todoTitle, setTodoTitle] = useState(""); // This hook especially to make input controlled input
 
-  const handleTitleChange = (event) => {
+  const handleTitleChange = (event) => { // This event handler especially for controlled input purpose, input controlled value always need onChange event handler
     const newTodoTitle = event.target.value;
     setTodoTitle(newTodoTitle);
   };
 
   const handleAddTodo = (event) => {
     event.preventDefault();
-  
+
     if (todoTitle) {
       onAddTodo({ id: Date.now(), title: todoTitle });
     }
-    
-    event.target.title.focus();
+                                                                                                                                                                        
     setTodoTitle("");
   }
 
@@ -23,17 +23,9 @@ function AddTodoForm({ onAddTodo }) {
     <>
       <form onSubmit={handleAddTodo}>
         <span className="todoBrdr">
-          <label htmlFor="todoTitle">Title: </label>
-          <input
-            type="text"
-            id="todoTitle"
-            name="title"
-            className="yourInput"
-            onChange={handleTitleChange}
-            value={todoTitle}
-          />
+          <InputWithLabel handleTitleChange={handleTitleChange} todoTitle={todoTitle}>Title: </InputWithLabel>  {/* todoTitle here is to controle the input and will assign to it value*/}
         </span>
-        <button type="submit">Add</button>
+        <button className="button1" type="submit">Add</button>
       </form>
     </>
   );
