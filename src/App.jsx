@@ -8,8 +8,6 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(isLoading);
-
   useEffect(() => {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
