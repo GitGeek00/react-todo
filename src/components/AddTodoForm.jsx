@@ -13,7 +13,7 @@ function AddTodoForm({ onAddTodo }) {
     event.preventDefault();
 
     if (todoTitle) {
-      onAddTodo({ id: Date.now(), title: todoTitle });
+      onAddTodo(todoTitle);
     }
                                                                                                                                                                         
     setTodoTitle("");
