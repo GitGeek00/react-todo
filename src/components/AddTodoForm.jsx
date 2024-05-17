@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InputWithLabel from "./InputWithLabel";
+import styles from '../style/TodoListItem.module.css'
 
 function AddTodoForm({ onAddTodo }) {
   const [todoTitle, setTodoTitle] = useState(""); // This hook especially to make input controlled input
@@ -22,10 +23,10 @@ function AddTodoForm({ onAddTodo }) {
   return (
     <>
       <form onSubmit={handleAddTodo}>
-        <span className="todoBrdr">
+        <span className={styles.todoBrdr}>
           <InputWithLabel handleTitleChange={handleTitleChange} todoTitle={todoTitle}>Title: </InputWithLabel>  {/* todoTitle here is to controle the input and will assign to it value*/}
         </span>
-        <button className="button1" type="submit">Add</button>
+        <button className={styles.button1} type="submit">Add</button>
       </form>
     </>
   );

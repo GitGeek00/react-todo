@@ -16,7 +16,6 @@ const InputWithLabel = ({ handleTitleChange, todoTitle, children }) => {
                 type="text"
                 id="todoTitle"
                 name="title"
-                className="yourInput"
                 onChange={handleTitleChange}
                 value={todoTitle}
             />

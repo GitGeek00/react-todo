@@ -1,11 +1,13 @@
+
 import TodoListItem from "./TodoListItem.jsx";
 
-function TodoList({ todoList, onRemoveTodo }) {
+function TodoList({ todoList, onRemoveTodo, color }) {
+
     return (
         <>
             <ul>
                 {todoList.map((item) => (
-                    <TodoListItem key={item.id} todo={item.title} onRemoveTodo={() => onRemoveTodo(item.id)} />
+                    <TodoListItem color={color} key={item.id} todo={item.title} onRemoveTodo={() => onRemoveTodo(item.id)} />
                 ))}
             </ul>
         </>
