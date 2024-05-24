@@ -1,0 +1,365 @@
+/* #region start vite default css */
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background: #eeaeca;
+    background: radial-gradient(circle,
+            rgba(238, 174, 202, 1) 0%,
+            rgba(148, 187, 233, 1) 100%);
+}
+/* #endregion end vite default css */
+
+/* #region start customization */
+.alignLeft {
+    text-align: left;
+}
+
+.brdr {
+    /* for development purpose */
+    border: 1px solid red;
+}
+
+h1 {
+    font-size: 4.2em;
+    line-height: 1;
+    color: #358aeb;
+}
+
+h2 {
+    color: #358aeb;
+}
+
+.todoList {
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 0 80px 50px;
+    box-shadow: 5px 5px 10px#888888;
+    margin: auto;
+    width: 600px
+}
+
+label {
+    font-size: 1.4rem;
+    color: #5d5e5e;
+}
+
+input {
+    font-size: 1.4rem;
+    background-color: transparent;
+    border: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 30px;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active,
+    &:focus {
+        transition: background-color 5000000s ease-in-out 0s;
+        border: none;
+        outline: none;
+    }
+}
+
+.button1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #5d5e5e;
+    border: 1px solid #5d5e5eb4;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 8px 22px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgb(145, 141, 141);
+
+    &:hover {
+        color: #0660c7;
+    }
+
+}
+
+.button2 {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.todoBrdr {
+    border: 1px solid #5d5e5eb4;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgb(168, 167, 167);
+}
+
+.welcome {
+    font-size: 1.2rem;
+    color: #7c8080;
+    text-shadow: 1px 1px rgb(158, 157, 157);
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+li h2 {
+    padding: 6px 3px;
+}
+
+li h2:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgb(168, 167, 167);
+
+    & .svg2 {
+        stroke: #358aeb;
+    }
+}
+
+li h2 button:hover .svg2 {
+    stroke: #fa0606;
+}
+
+/*#region Media Query for Extra Small devices (portrait tablets and large phones, 600px and up)*/
+@media screen and (max-width: 600px) {
+    .todoList {
+        border: 1px solid gray;
+        border-radius: 20px;
+        padding: 0 8px 5px;
+        box-shadow: 5px 5px 10px#888888;
+        margin: auto;
+        width: 300px
+    }
+
+    .welcome {
+        font-size: 0.8rem !important;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        line-height: 1;
+        color: #358aeb;
+    }
+
+    input {
+        font-size: 1.4rem;
+        width: 30%;
+    }
+
+    .button1 {
+        font-size: 1rem !important;
+        padding: 10px 5px !important;
+    }
+
+    label {
+        font-size: 1.2rem !important;
+    }
+
+    ul {
+        padding-left: 10px !important;
+    }
+
+}
+/*#endregion*/
+
+/*#region Media Query for Small devices (portrait tablets and large phones, 600px and up)*/
+@media screen and (min-width: 600px) {
+    .todoList {
+        border: 1px solid gray;
+        border-radius: 20px;
+        padding: 0 8px 50px;
+        box-shadow: 5px 5px 10px#888888;
+        margin: auto;
+        width: 500px !important
+    }
+
+    .welcome {
+        font-size: 1.2rem !important;
+    }
+
+    h1 {
+        font-size: 2.8em;
+        line-height: 1;
+        color: #358aeb;
+    }
+
+    input {
+        font-size: 1.4rem;
+        width: 30%;
+    }
+
+    .button1 {
+        font-size: 1.2rem !important;
+        padding: 10px 20px !important;
+    }
+
+    label {
+        font-size: 1.4rem !important;
+    }
+
+    ul {
+        padding-left: 40px !important;
+    }
+
+}
+/*#endregion*/
+
+/*#region Media Query for Medium devices (landscape tablets, 768px and up)*/
+@media screen and (min-width: 768px) {
+    .todoList {
+        border: 1px solid gray;
+        border-radius: 20px;
+        padding: 0 8px 50px;
+        box-shadow: 5px 5px 10px#888888;
+        margin: auto;
+        width: 650px !important
+    }
+
+    .welcome {
+        font-size: 1.2rem !important;
+    }
+
+    h1 {
+        font-size: 3.2em;
+        line-height: 1;
+        color: #358aeb;
+    }
+
+    input {
+        font-size: 1.4rem;
+        width: 30%;
+    }
+
+    .button1 {
+        font-size: 1.2rem !important;
+        padding: 10px 20px !important;
+    }
+
+    label {
+        font-size: 1.4rem !important;
+    }
+
+    ul {
+        padding-left: 40px !important;
+    }
+
+}
+/*#endregion*/
+
+/*#region Start Loader */
+.skCubeGrid {
+    width: 250px;
+    height: 250px;
+    margin: 100px auto 0;
+}
+
+.skCubeGrid .skCube {
+    width: 33%;
+    height: 33%;
+    background-color: rgba(53, 138, 235, 0.774);
+    float: left;
+    -webkit-animation: skCubeGridScaleDelay 1.3s infinite ease-in-out;
+    animation: skCubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.skCubeGrid .skCube1 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.skCubeGrid .skCube2 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.skCubeGrid .skCube3 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.skCubeGrid .skCube4 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.skCubeGrid .skCube5 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.skCubeGrid .skCube6 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.skCubeGrid .skCube7 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.skCubeGrid .skCube8 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.skCubeGrid .skCube9 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+@-webkit-keyframes skCubeGridScaleDelay {
+
+    0%,
+    70%,
+    100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    }
+
+    35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+@keyframes skCubeGridScaleDelay {
+
+    0%,
+    70%,
+    100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    }
+
+    35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+/* #endregion */

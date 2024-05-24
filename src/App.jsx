@@ -1,13 +1,17 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 import "./style/App.css";
+import styles from './style/TodoListItem.module.css'
 import TodoList from "./components/TodoList";
 import AddTodoForm from "./components/AddTodoForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import BasicMenu from './components/BasicMenu'
+
 
 function App() {
-
+  const [color, setColor] = useState('#358aeb')
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
 
   const fetchData = async () => {
     const options = {
@@ -91,29 +95,31 @@ function App() {
             {(isLoading)
               ?
               <>
-                <div className="sk-cube-grid">
-                  <div className="sk-cube sk-cube1"></div>
-                  <div className="sk-cube sk-cube2"></div>
-                  <div className="sk-cube sk-cube3"></div>
-                  <div className="sk-cube sk-cube4"></div>
-                  <div className="sk-cube sk-cube5"></div>
-                  <div className="sk-cube sk-cube6"></div>
-                  <div className="sk-cube sk-cube7"></div>
-                  <div className="sk-cube sk-cube8"></div>
-                  <div className="sk-cube sk-cube9"></div>
+                <div className={styles.skCubeGrid}>
+                  <div className={`${styles.skCube} ${styles.skCube1}`}></div>
+                  <div className={`${styles.skCube} ${styles.skCube2}`}></div>
+                  <div className={`${styles.skCube} ${styles.skCube3}`}></div>
+                  <div className={`${styles.skCube} ${styles.skCube4}`}></div>
+                  <div className={`${styles.skCube} ${styles.skCube5}`}></div>
+                  <div className={`${styles.skCube} ${styles.skCube6}`}></div>
+                  <div className={`${styles.skCube} ${styles.skCube7}`}></div>
+                  <div className={`${styles.skCube} ${styles.skCube8}`}></div>
+                  <div className={`${styles.skCube} ${styles.skCube9}`}></div>
                 </div>
                 <h1>Loading.....</h1>
-                <h1 className="welcome">
+                <h1 className={styles.welcome}>
                   Welcome to My Todo List REACT Application
                 </h1>
-                <h1 className="welcome">Developer: Maher Algepah</h1>
+                <h1 className={styles.welcome}>Developer: Maher Algepah</h1>
               </>
               :
               <>
-                <div className="todoList">
+                <BasicMenu color={color} setColor={setColor} />
+
+                <div className={styles.todoList}>
                   <h1>My Todo List</h1>
                   <AddTodoForm onAddTodo={addTodo} />
-                  <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+                  <TodoList color={color} todoList={todoList} onRemoveTodo={removeTodo} />
                 </div>
               </>
             }
