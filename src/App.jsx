@@ -90,41 +90,41 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element=
-        {(
-          <>
-            {(isLoading)
-              ?
-              <>
-                <div className={styles.skCubeGrid}>
-                  <div className={`${styles.skCube} ${styles.skCube1}`}></div>
-                  <div className={`${styles.skCube} ${styles.skCube2}`}></div>
-                  <div className={`${styles.skCube} ${styles.skCube3}`}></div>
-                  <div className={`${styles.skCube} ${styles.skCube4}`}></div>
-                  <div className={`${styles.skCube} ${styles.skCube5}`}></div>
-                  <div className={`${styles.skCube} ${styles.skCube6}`}></div>
-                  <div className={`${styles.skCube} ${styles.skCube7}`}></div>
-                  <div className={`${styles.skCube} ${styles.skCube8}`}></div>
-                  <div className={`${styles.skCube} ${styles.skCube9}`}></div>
-                </div>
-                <h1>Loading.....</h1>
-                <h1 className={styles.welcome}>
-                  Welcome to My Todo List REACT Application
-                </h1>
-                <h1 className={styles.welcome}>Developer: Maher Algepah</h1>
-              </>
-              :
-              <>
-                <BasicMenu color={color} setColor={setColor} />
+          {(
+            <>
+              {(isLoading)
+                ?
+                <>
+                  <div className={styles.skCubeGrid}>
+                    <div className={`${styles.skCube} ${styles.skCube1}`}></div>
+                    <div className={`${styles.skCube} ${styles.skCube2}`}></div>
+                    <div className={`${styles.skCube} ${styles.skCube3}`}></div>
+                    <div className={`${styles.skCube} ${styles.skCube4}`}></div>
+                    <div className={`${styles.skCube} ${styles.skCube5}`}></div>
+                    <div className={`${styles.skCube} ${styles.skCube6}`}></div>
+                    <div className={`${styles.skCube} ${styles.skCube7}`}></div>
+                    <div className={`${styles.skCube} ${styles.skCube8}`}></div>
+                    <div className={`${styles.skCube} ${styles.skCube9}`}></div>
+                  </div>
+                  <h1>Loading.....</h1>
+                  <h1 className={styles.welcome}>
+                    Welcome to My Todo List REACT Application
+                  </h1>
+                  <h1 className={styles.welcome}>Developer: Maher Algepah</h1>
+                </>
+                :
+                <>
+                  <BasicMenu color={color} setColor={setColor} />
 
-                <div className={styles.todoList}>
-                  <h1>My Todo List</h1>
-                  <AddTodoForm onAddTodo={addTodo} />
-                  <TodoList color={color} todoList={todoList} onRemoveTodo={removeTodo} />
-                </div>
-              </>
-            }
-          </>
-        )} />
+                  <div className={styles.todoList}>
+                    <h1>My Todo List</h1>
+                    <AddTodoForm onAddTodo={addTodo} />
+                    <TodoList color={color} todoList={todoList} onRemoveTodo={removeTodo} />
+                  </div>
+                </>
+              }
+            </>
+          )} />
         <Route path="/new" element={(<h1>New Todo List</h1>)} />
       </Routes>
     </BrowserRouter>
