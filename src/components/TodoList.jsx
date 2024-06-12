@@ -1,5 +1,6 @@
 
 import TodoListItem from "./TodoListItem.jsx";
+import PropTypes from 'prop-types';
 
 function TodoList({ todoList, onRemoveTodo, color }) {
 
@@ -12,6 +13,10 @@ function TodoList({ todoList, onRemoveTodo, color }) {
             </ul>
         </>
     )
+}
+
+TodoList.protoTypes = {
+    TodoListItem: PropTypes.object
 }
 
 export default TodoList;
