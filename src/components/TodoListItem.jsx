@@ -1,13 +1,14 @@
 import styles from '../style/TodoListItem.module.css'
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 function TodoListItem({ todo, onRemoveTodo, color }) {
     return (
         <>
             <li className={styles.alignLeft}>
-                <h2 style={{ color: `${color}` }}>
+                <h2 style={{ color: `${color}`, position: "relative" }}>
                     <svg width="20px" height="20px" viewBox="0 0 192 150" xmlns="http://www.w3.org/2000/svg" fill={`${color}`}><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round"></g><g id="SVGRepo_iconCarrier"><path stroke={`${color}`} strokeWidth="12" d="M80 105.485 48.284 73.769a4 4 0 0 0-5.657 0l-19.799 19.8a4 4 0 0 0 0 5.656L65.603 142"></path><rect width="36" height="132" x="147.279" y="37" stroke={`${color}`} strokeLinecap="round" strokeWidth="12" rx="4" transform="rotate(45 147.279 37)"></rect></g></svg>
-                    &nbsp;{todo}
+                    &nbsp;{todo[0]} <span style={{ fontSize: "1rem", position: "absolute", right: "15px", top: "10px" }}>{moment(todo[1]).format('llll')}</span>
                     <button className={styles.button2} type="button" onClick={onRemoveTodo}>
                         <svg width="20px" height="20px" viewBox="0 0 24.00 22.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>

@@ -25,6 +25,7 @@ body {
             rgba(238, 174, 202, 1) 0%,
             rgba(148, 187, 233, 1) 100%);
 }
+
 /* #endregion end vite default css */
 
 /* #region start customization */
@@ -95,13 +96,26 @@ input {
     &:hover {
         color: #0660c7;
     }
-
 }
 
-.button2 {
-    border: none;
-    background-color: transparent;
+.sortButton {
+    position: relative !important;
+    top: -7px !important;
+    padding: 2px 5px;
     cursor: pointer;
+    background-color: #d3cfcf;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #dddada;
+    }
+
+    &:focus {
+        background-color: #e7e5e5;
+    }
+
 }
 
 .todoBrdr {
@@ -122,22 +136,43 @@ ul {
     padding-left: 20px;
 }
 
+ul p {
+    text-align: left;
+    font-size: 1.8rem;
+    color: #0171f1;
+    font-weight: 800;
+    margin: 0 !important;
+    padding: 5px 15px;
+    border: 1px solid #0171f13d;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+
+.button2 {
+    border: none !important;
+    background-color: transparent !important;
+    cursor: pointer !important;
+    position: static !important;
+}
+
 li {
     padding: 0;
     margin: 0;
     line-height: 0;
+    border: 1px solid #0171f13d
 }
 
 li h2 {
-    padding: 6px 3px;
+    padding: 0 10px;
 }
 
-li h2:hover {
+li:hover {
     cursor: pointer;
     box-shadow: 0 2px 5px rgb(168, 167, 167);
 
     & .svg2 {
-        stroke: #358aeb;
+        stroke: #676868;
     }
 }
 
@@ -185,6 +220,7 @@ li h2 button:hover .svg2 {
     }
 
 }
+
 /*#endregion*/
 
 /*#region Media Query for Small devices (portrait tablets and large phones, 600px and up)*/
@@ -227,6 +263,7 @@ li h2 button:hover .svg2 {
     }
 
 }
+
 /*#endregion*/
 
 /*#region Media Query for Medium devices (landscape tablets, 768px and up)*/
@@ -237,7 +274,7 @@ li h2 button:hover .svg2 {
         padding: 0 8px 50px;
         box-shadow: 5px 5px 10px#888888;
         margin: auto;
-        width: 650px !important
+        width: 650px !important;
     }
 
     .welcome {
@@ -266,9 +303,11 @@ li h2 button:hover .svg2 {
 
     ul {
         padding-left: 40px !important;
+        padding-right: 40px !important;
     }
 
 }
+
 /*#endregion*/
 
 /*#region Start Loader */
