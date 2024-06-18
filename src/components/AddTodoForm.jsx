@@ -25,7 +25,7 @@ function AddTodoForm({ onAddTodo }) {
     <>
       <form onSubmit={handleAddTodo}>
         <span className={styles.todoBrdr}>
-          <InputWithLabel handleTitleChange={handleTitleChange} todoTitle={todoTitle}>Title: </InputWithLabel>  {/* todoTitle here is to controle the input and will assign to it value*/}
+          <InputWithLabel handleTitleChange={handleTitleChange} todoTitle={todoTitle}>Title: </InputWithLabel>  {/* todoTitle here is to control the input and will assign to it value*/}
         </span>
         <button className={styles.button1} type="submit">Add</button>
       </form>
